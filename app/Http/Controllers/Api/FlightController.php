@@ -10,6 +10,14 @@ use Illuminate\Http\Request;
 class FlightController extends Controller
 {
     /**
+     * Liste des vols (appelé par Route::get('/flights', ...))
+     */
+    public function index(Request $request)
+    {
+        return $this->search($request);
+    }
+
+    /**
      * Recherche avancée de vols
      */
     public function search(Request $request)
